@@ -1,0 +1,64 @@
+##
+## These are code snippits that might find their way back into dvn.sh at some point.
+##
+
+Clean()
+{    
+    if [[ $1 == "deborphan" ]]; then
+        sudo deborphan | xargs sudo apt-get -y remove --purge | tee -a $dvnTemp/deborphan-01.log
+        sudo deborphan --guess-data | xargs sudo apt-get -y remove --purge | tee -a $dvnTemp/deborphan-02.log
+    fi
+
+    if [[ $1 == "directories" ]]; then
+        sudo rm -rf /usr/share/man/* | tee -a $dvnTemp/remove-manpages.log
+        sudo rm -rf /usr/share/doc/* | tee -a $dvnTemp/remove-docfiles.log
+    fi
+
+    if [[ $1 == "bleachbit" ]]; then
+        sudo bleachbit --clean apt.* \
+                               bash.* \
+                               deepscan.* \
+                               system.* | tee -a $dvnTemp/bleachbit.log
+    fi
+
+    if [[ $1 == "aptget" ]]; then
+        sudo apt-get autoremove | tee -a $dvnTemp/autoremove-aptget.log
+        sudo apt-get autoclean | tee -a $dvnTemp/autoclean-aptget.log
+        sudo apt-get clean | tee -a $dvnTemp/clean-aptget.log
+    fi
+}
+
+# Start
+if [[ "#@" =~ "minimal" ]]; then
+    PurgePackage dictionaries-common \
+                 eject \
+                 gettext-base \
+                 gnupg \
+                 ispell \
+                 laptop-detect \
+                 vim-common \
+                 wamerican
+fi
+
+# After prereqs
+if [[ "#@" =~ "minimal" ]]; then
+    InstallPackage python \
+                   deborphan \
+                   bleachbit
+fi
+
+
+
+
+
+# Scala
+# Scratch
+# R
+# MATLAB
+# PL/SQL
+# Objective-C
+# Assembly
+# Delphi/Object Pascal
+# Node.js
+
+# Frameworks
