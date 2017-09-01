@@ -152,9 +152,9 @@ if [[ "$dvnArgs" =~ "--standard" ]]; then
     InstallAptGetPackage tango-icon-theme xfce4-terminal code filezilla iceweasel pidgin nginx openjdk-8-jdk python python3 \
                         python3-pip python3-matplotlib python3-scipy ruby rails
     InstallPipPackage jupyter
-    BuildPackagePackage go | tee $dvnLogs/go-install.log
-    BuildPackagePackage lua | tee $dvnLogs/lua-install.log
-    BuildPackagePackage rust | tee $dvnLogs/rust-install.log
+    BuildPackage go | tee $dvnLogs/go-install.log
+    BuildPackage lua | tee $dvnLogs/lua-install.log
+    BuildPackage rust | tee $dvnLogs/rust-install.log
     StartupItem nginx | tee $dvnLogs/configure-nginx.log
 fi
 

@@ -1,7 +1,10 @@
 dvn.sh Changelog
 ================
 
+v00.90.01 [170901]
+---------
+[FIX] Some of the standard "BuildPackage" calls were mispelled as "BuildPackagePackage"
 
-v00.90.170901
--------------
-* Initial release.
+v00.90.00 [170901]
+---------
+[NFO] Initial release.
