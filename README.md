@@ -6,8 +6,9 @@
 
 To get the latest version of dvn.sh:
 
-  $ wget $HOME http://aprettycoolprogram.com/dvn/dvn.sh
-  $ chmod +x dvn.sh
+  > $ wget $HOME http://aprettycoolprogram.com/dvn/dvn.sh
+  
+  > $ chmod +x dvn.sh
  
  dvn.sh has the following options, which can be combined:
  
@@ -60,13 +61,13 @@ To get the latest version of dvn.sh:
 
 When running dvn.sh for the first time, you have to include the "--standard" option
 
-  $ dvn.sh --standard
+  > $ dvn.sh --standard
 
 After dvn.sh has been run once, you can add some more obscure languages:
 
-  $ dvn.sh --kitchensink
+  > $ dvn.sh --kitchensink
   
 Or you can do everything at once:
 
-  $ dvn.sh --standard --kitchensink -- virtualbox
+  > $ dvn.sh --standard --kitchensink -- virtualbox
   
