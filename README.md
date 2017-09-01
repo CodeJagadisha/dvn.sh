@@ -1,6 +1,6 @@
 # dvn.sh
 
-###dvn.sh is a Bash shell script that will automatically build a Debian linux baseed software development environment.
+#### dvn.sh is a Bash shell script that will automatically build a Debian linux baseed software development environment.
 
 *dvn.sh is currently beta.*
 
