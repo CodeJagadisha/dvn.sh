@@ -13,6 +13,7 @@ To get the latest version of dvn.sh:
  
   --standard
     Installs a standard development environment containing:
+    
       * localepurge
       * curl
       * apt-transport-https
@@ -43,6 +44,7 @@ To get the latest version of dvn.sh:
       
   --kitchensink
     Installs additional packages and languages, including:
+    
       * Ada 6.3.0 (w/gnat)
       * Agda 2.5.1.1
       * Erlang 8.2.1
