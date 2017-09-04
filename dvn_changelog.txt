@@ -1,6 +1,15 @@
 dvn.sh Changelog
 ================
 
+v00.91.00 [170903]
+---------
+[NEW] emacs
+[NEW] GIMP
+[NEW] Node.js
+[NEW] CoffeeScript
+[NEW] Dart
+[NEW] Haskell (kitchensink)
+
 v00.90.01 [170901]
 ---------
 [FIX] Some of the standard "BuildPackage" calls were mispelled as "BuildPackagePackage"

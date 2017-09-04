@@ -50,15 +50,18 @@ fi
 
 
 
+# Languages
+Scala
+Scratch
+R
+MATLAB
+PL/SQL
+Objective-C
+Assembly
+Delphi/Object Pascal
+Coffee-script
 
-# Scala
-# Scratch
-# R
-# MATLAB
-# PL/SQL
-# Objective-C
-# Assembly
-# Delphi/Object Pascal
-# Node.js
+
 
 # Frameworks
+https://www.npmjs.com/

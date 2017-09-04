@@ -2,8 +2,8 @@
 set -e
 
 #      FILENAME: dvn.sh
-#       VERSION: 00.90
-#         BUILD: 170901
+#       VERSION: 00.91.00
+#         BUILD: 170903
 #   DESCRIPTION: Used to setup a dvn environment in Linux
 #       AUTHORS: Christopher Banwarth (development@aprettycoolprogram.com)
 #     COPYRIGHT: 2017 A Pretty Cool Program
@@ -17,6 +17,13 @@ AddAptGetRepository() {
             curl -k https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
             sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
             ;;
+        "dart")
+            $ sudo sh -c 'curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+            $ sudo sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+            ;;
+        "nodejs")
+            curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+            ;;
         *) echo "Cannot add repository for $1"
             ,,
     esac
@@ -28,6 +35,10 @@ BuildPackage() {
             wget -P $dvnTemp http://homepages.cwi.nl/~steven/abc/implementations/abc.tar.gz
             sudo tar -C /usr/local -xzf $dvnTemp/abc.tar.gz
             echo "PATH=$PATH:/usr/local/ABC" >> .profile
+            ;;
+        "dart")
+            echo "PATH=$PATH:/usr/lib/dart/bin" >> .profile
+            sudo apt-get install dart
             ;;
         "go")
             wget -P $dvnTemp https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
@@ -146,12 +157,16 @@ if [[ "$dvnArgs" =~ "--standard" ]]; then
     touch $HOME/.bash_profile
     InstallAptGetPackage localepurge curl apt-transport-https
     AddAptGetRepository code | tee $dvnLogs/code-add-repository.log
+    AddAptGetRepository nodejs | tee $dvnLogs/node.js-add-repository.log
+    AddAptGetRepository dart | tee $dvnLogs/dart-add-repository.log
     UpdateAptGet
     InstallAptGetPackage build-essential linux-headers-$(uname -r) htop xorg
     InstallAptGetPackageMinimal xfce4
     InstallAptGetPackage tango-icon-theme xfce4-terminal code filezilla iceweasel pidgin nginx openjdk-8-jdk python python3 \
-                        python3-pip python3-matplotlib python3-scipy ruby rails
+                        python3-pip python3-matplotlib python3-scipy ruby rails nodejs emacs gimp
+    npm install --global coffeescript
     InstallPipPackage jupyter
+    BuildPackage dart | tee $dvnLogs/dart-install.log
     BuildPackage go | tee $dvnLogs/go-install.log
     BuildPackage lua | tee $dvnLogs/lua-install.log
     BuildPackage rust | tee $dvnLogs/rust-install.log
@@ -171,8 +186,10 @@ if [[ "$dvnArgs" =~ "--kitchensink" ]]; then
     InstallAptGetPackage agda
     # Erlang
     InstallAptGetPackage erlang
+    # Haskell
+    sudo apt-get install haskell-platform
     # Swift
-    BuildPackagePackage swift | tee $dvnLogs/rust-install.log
+    BuildPackage swift | tee $dvnLogs/rust-install.log
 fi
 
 # Experimental packages, use at your own risk (optional).
