@@ -16,11 +16,13 @@ To get the latest version of dvn.sh:
     Installs a standard development environment containing:
     
       * localepurge
-      * curl
+      * software-properties-common
+      * curl
       * apt-transport-https
       * build-essential
       * linux-headers
       * htop
+      * openssh-server
       * emacs
       * gimp
       * xorg
@@ -30,6 +32,7 @@ To get the latest version of dvn.sh:
       * Microsoft Visual Studio Code
       * Filezilla
       * Mozilla Firefox
+      * Chromium
       * Pidgin
       * Nginx
       * Dart
@@ -65,6 +68,12 @@ To get the latest version of dvn.sh:
       
   **--virtualbox**
     Installs the Oracle VirtualBox Guest Additions.
+
+  **--no-prereqs**
+    If you're using dvn.sh multiple times, using this argument will skip the prerequisite setup.
+    
+  **--power-minimize**
+    For power-users. This will reduce the footprint of your image by removing unecessary components from Debian.
 
 When running dvn.sh for the first time, you have to include the "--standard" option
 
