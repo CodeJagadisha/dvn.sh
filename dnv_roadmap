@@ -1,0 +1,26 @@
+dvn.sh Changelog
+================
+
+[XXXXXX] Add pip and npm packages to the Issue Report, so the user knows if there were any issues with installation.
+[XXXXXX] Add the ability to determine CPU architecture, so dvn can be used on Raspberry Pi.
+[XXXXXX] Install and setup MariaDB
+[XXXXXX] Install and setup PHP
+[XXXXXX] Setup a LEMP server
+[XXXXXX] Install Docker
+[XXXXXX] Install Vagrant
+
+
+
+
+# Languages
+Scala
+Scratch
+R
+MATLAB
+PL/SQL
+Objective-C
+Assembly
+Delphi/Object Pascal
+
+# Frameworks
+https://www.npmjs.com/

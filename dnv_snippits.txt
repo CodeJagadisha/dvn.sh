@@ -46,22 +46,3 @@ if [[ "#@" =~ "minimal" ]]; then
                    deborphan \
                    bleachbit
 fi
-
-
-
-
-# Languages
-Scala
-Scratch
-R
-MATLAB
-PL/SQL
-Objective-C
-Assembly
-Delphi/Object Pascal
-Coffee-script
-
-
-
-# Frameworks
-https://www.npmjs.com/

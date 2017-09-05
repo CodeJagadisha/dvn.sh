@@ -1,14 +1,31 @@
 dvn.sh Changelog
 ================
 
+v00.92.00 [170905]
+---------
+[NEW] After the installation is complete, a report is presented that details any issues that may occured.
+[NEW] The following packages have been added to the prerequisite install:
+        * software-properties-common
+[NEW] The following packages have been added to the standard install:
+        * OpenSSH-server
+        * OpenSSH-client
+        * Chromium
+[NEW] Added the "--no-prereqs" flag. This can be used to supress the installtion of prerequisite packages, which
+      can be helpful if you have run "dvn.sh --standard", and now want to run "dvn.sh --no-prereqs --kitchensink.
+      Keep in mind that now "dvn.sh" (without arguments) will always attempt to install prerequisite packages.
+[NEW] Added the "--power-minimize" flag. Power users can user this flag to remove unecessary components to reduce
+      the footprint of dvn.
+[FIX] CoffeeScript install was failing due to not running as sudo.
+[FIX] Swift installation details were being written to the wrong logfile.
+
 v00.91.00 [170903]
 ---------
-[NEW] emacs
-[NEW] GIMP
-[NEW] Node.js
-[NEW] CoffeeScript
-[NEW] Dart
-[NEW] Haskell (kitchensink)
+[NEW] Emacs has been added to the standard install
+[NEW] GIMP has been added to the standard install
+[NEW] Node.js has been added to the standard install
+[NEW] CoffeeScript has been added to the standard install
+[NEW] Dart has been added to the standard install
+[NEW] Haskell  has been added to the kitchen sink install
 
 v00.90.01 [170901]
 ---------
