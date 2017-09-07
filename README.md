@@ -16,8 +16,8 @@ To get the latest version of dvn.sh:
     Installs a standard development environment containing:
     
       * localepurge
-      * software-properties-common
-      * curl
+      * software-properties-common
+      * curl
       * apt-transport-https
       * build-essential
       * linux-headers
