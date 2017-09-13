@@ -2,12 +2,16 @@
 
 #### dvn.sh is a Bash shell script that will automatically build a Debian linux baseed software development environment.
 
-*dvn.sh is currently beta.*
+*This project has moved:* https://github.com/APrettyCoolProgram/stackfor)
+
+
+---
+This is the original README text for dvn.sh
+---
 
 To get the latest version of dvn.sh:
 
   > $ wget $HOME http://aprettycoolprogram.com/dvn/dvn.sh
-  
   > $ chmod +x dvn.sh
  
  dvn.sh has the following options, which can be combined:
